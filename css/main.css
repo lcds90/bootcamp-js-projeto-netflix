@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --red: #e50914;
+  --black: #141414;
+  --textmenu: #aaa;
+  --textmenuhover: #fff;
+}
+
+@font-face {
+  font-family: "Logo";
+  src: url("../fonts/BebasNeue-Regular.otf");
+}
+
+@font-face {
+  font-family: "Title";
+  src: url("../fonts/TypoGraphica_demo.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Text";
+  src: url("../fonts/CaviarDreams.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Text";
+  src: url("../fonts/CaviarDreams_Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Text";
+  src: url("../fonts/CaviarDreams_Italic.ttf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Text";
+  src: url("../fonts/CaviarDreams_BoldItalic.ttf");
+  font-style: italic;
+  font-weight: bold;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  25% {
+    transform: translateY(-800px) translateX(250px) rotate(980deg);
+    opacity: 0.25;
+    border-radius: 25%;
+  }
+
+  50% {
+    transform: translateY(800px) translateX(-2500px) rotate(720deg);
+    opacity: 0.5;
+    border-radius: 50%;
+  }
+  75% {
+    transform: translateY(1200px) rotate(1200deg);
+    opacity: 1;
+    border-radius: 75%;
+  }
+  100% {
+    transform: translateY(-1200px) rotate(0deg);
+    opacity: 1;
+    border-radius: 100%;
+  }
+}
+
+.background {
+  background: #141414;
+  overflow: hidden;
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(55, 55, 55, 0.5);
+  animation: animate 10s ease-in-out infinite;
+}
+
+.background li:nth-child(0) {
+  left: 7%;
+  width: 12px;
+  height: 12px;
+  bottom: -12px;
+  animation-delay: 1s;
+}
+.background li:nth-child(1) {
+  left: 59%;
+  width: 26px;
+  height: 26px;
+  bottom: -26px;
+  animation-delay: 5s;
+}
+.background li:nth-child(2) {
+  left: 58%;
+  width: 17px;
+  height: 17px;
+  bottom: -17px;
+  animation-delay: 2s;
+}
+.background li:nth-child(3) {
+  left: 65%;
+  width: 9px;
+  height: 9px;
+  bottom: -9px;
+  animation-delay: 12s;
+}
+.background li:nth-child(4) {
+  left: 42%;
+  width: 16px;
+  height: 16px;
+  bottom: -16px;
+  animation-delay: 2s;
+}
+.background li:nth-child(5) {
+  left: 6%;
+  width: 20px;
+  height: 20px;
+  bottom: -20px;
+  animation-delay: 13s;
+}
+
+/* Elemento Base */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  position: relative;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background: var(--black);
+  color:white;
+  font-family: "Helvetica", Times, serif;
+  max-width:100%;
+  max-height:100%;
+}
+
+header {
+  width:100%;
+  position: relative;
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient();
+}
+
+header .logo {
+  margin-left: 5vw;
+  margin-bottom:1vh;
+  font-family: "Logo", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  border-bottom: double rgba(170, 170, 170, 0.10) 5px;
+  border-radius: 25px;
+  letter-spacing: 10px;
+  padding:15px;
+  color: var(--red);
+}
+
+header nav {
+  margin-right:50px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--textmenu);
+  font-family: "Text", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  margin-right: 10px;
+  transition: all .5s ease;
+}
+
+header nav a:not(:last-child):after {
+  color: var(--textmenu);
+  content: " | ";
+}
+
+header nav a:not(:first-child):hover {
+  color: var(--textmenuhover);
+  font-size:35px;
+  margin-left:25px;
+  transition: all .5s ease;
+}
+
+header nav a:first-child:hover {
+  color: var(--textmenuhover);
+  font-size:35px;
+  margin-right:25px;
+  transition: all .5s ease;
+}
+
+/* Filme Principal */
+
+.filme-principal {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  font-size:16px;
+  background: no-repeat -webkit-gradient(linear, center top, center bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, .025))), url('../img/modernFamily.jpg');
+  height:500px;
+  width:100%;
+  background-size:cover;
+  background-position: 50% 20%;
+  border-bottom:#e5091485 5px double;
+}
+
+.filme-principal .container {
+  margin:auto;
+  padding:25px;
+  background:-webkit-linear-gradient(rgba(155,155,155,.75), rgba(155,155,155,.005));
+  border-radius:25px;
+}
+
+.filme-principal .descricao {
+  margin-bottom: 10vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.filme-principal .titulo {
+  margin-top:5%;
+  font-size:40px;
+  letter-spacing: 5px;
+  font-family: "Title", sans-serif;
+  color:white;
+  filter:drop-shadow(5px 5px 5px rgba(255,255,255,.25));
+  border-bottom:rgba(255, 255, 255, .5) 1px solid;
+}
+
+.filme-principal .botao {
+  background-color: rgba(0, 0, 0, .5);
+  border:none;
+  color:white;
+  padding:15px 30px;
+  font-size:12px;
+  margin-right:20px;
+  filter: drop-shadow(0px 15px 15px rgba(0,0,0,.5));
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  transition: background-color .3s ease-in;
+}
+
+.filme-principal .botoes {
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.filme-principal .botao:hover {
+  background-color:white;
+  color:black;
+  transition: background-color .3s ease-in;
+
+}
+
+.filme-principal .botao i{
+  margin-right:10px;
+  color:lightgrey;
+}
+
+.carrosel-filmes {
+  width:100%;
+  margin-top:5vh;
+}
+
+.box-filme {
+  height: 60vh;
+  width:100%;
+  display:block;
+  overflow:hidden;
+  transition:all 1s ease-in-out;
+  background: rgba(155,155,155,.005);
+  border:double 0px rgba(155,155,155,.75);
+}
+
+.box-filme:hover {
+  -webkit-box-shadow: 0px 10px 5px 0px rgba(255,255,255,1);
+-moz-box-shadow: 0px 10px 5px 0px rgba(255,255,255,1);
+box-shadow: 0px 10px 5px 0px rgba(255,255,255,1);
+  border:double 25px var(--black);
+  transition:all .5s ease-in-out;
+}
+
+.item {
+  position:relative;
+}
+
+.item-titulo {
+  position:absolute;
+  top:0;
+  font-family: 'Roboto', sans-serif;
+  background:rgba(0, 0, 0, .75);
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:25px;
+  letter-spacing: 1px;
+  text-align: center;
+  color:#aaa;
+  transition:all .5s ease;
+}
+
+.item-date {
+  font-size:10px;
+}
+
+.item-titulo:hover {
+  height:200px;
+  background:rgba(0, 0, 0, .95);
+  transition:all .5s ease;
+  color:white;
+}
+
+
+.item-titulo:hover .item-desc-after {
+  display:inline;
+}
+
+.item-titulo:hover .item-down {
+  display:none
+}
+
+.item-descricao::-webkit-scrollbar{
+  width:0px;
+}
+
+.item-descricao {
+  position:absolute;
+  bottom:0px;
+  background:rgba(170, 170, 170, 0.25);
+  color:rgba(170,170,170,.85);
+  font-size:16px;
+  border-radius:5px;
+  height:25px;
+  overflow-y:auto;
+  transition:all .5s ease;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Roboto', sans-serif;
+}
+
+.item-desc {
+  border-top:.5px solid var(--red);
+  padding:5px;
+}
+
+.item-desc, .item-desc-after {
+  display:none;
+}
+
+.item-descricao:hover{
+  color:black;
+  background:rgba(170, 170, 170, 1);
+  transition:all .5s ease;
+  height:300px;
+  padding:5px;
+}
+
+.item-descricao:hover .item-desc {
+  display:inline;
+}
+
+.item-descricao:hover .item-up {
+  display:none
+}
+
+.item-descricao .item-up {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-descricao .item-up i {
+  margin:5px;
+}
+
