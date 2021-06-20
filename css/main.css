@@ -227,23 +227,62 @@ header nav a:first-child:hover {
 
   font-size:16px;
   background: no-repeat -webkit-gradient(linear, center top, center bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, .025))), url('../img/modernFamily.jpg');
-  height:500px;
+  height:100vh;
   width:100%;
   background-size:cover;
   background-position: 50% 20%;
   border-bottom:#e5091485 5px double;
+  animation: opacity 2.5s linear;
+}
+
+@keyframes opacity {
+  from {
+    opacity:0
+  } to {
+    opacity:1
+  }
 }
 
 .filme-principal .container {
   margin:auto;
   padding:25px;
-  background:-webkit-linear-gradient(rgba(155,155,155,.75), rgba(155,155,155,.005));
+  background:-webkit-linear-gradient(rgba(253, 253, 253, 0.75), rgba(155,155,155,.005));
+  background:-moz-linear-gradient(rgba(253, 253, 253, 0.75), rgba(155,155,155,.005));
+  background:-o-linear-gradient(rgba(253, 253, 253, 0.75), rgba(155,155,155,.005));
+  background:linear-gradient(rgba(253, 253, 253, 0.75), rgba(155,155,155,.005));
+  background-repeat: repeat-x;
   border-radius:25px;
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  background-position: 0 0;
+
+  animation: bg 5s ease-in-out;
+}
+
+.destaque {
+  color:var(--textmenu);
+  text-align: center;
+  margin-left:25px;
+  position:relative;
+  top:25px;
+  padding:25px;
+  background:var(--black);
+  animation: bgDestaque 5s ease;
+}
+
+@keyframes bg {
+  from {
+    background-position: 0px -700px;
+  } to{
+    background-position: 0 0;
+  }
 }
 
 .filme-principal .descricao {
   margin-bottom: 10vh;
   font-family: 'Roboto', sans-serif;
+  animation: textColorTitle 3.5s ease-out;
+  color:var(--black);
 }
 
 .filme-principal .titulo {
@@ -251,9 +290,28 @@ header nav a:first-child:hover {
   font-size:40px;
   letter-spacing: 5px;
   font-family: "Title", sans-serif;
-  color:white;
+  animation: textColorTitle 2.5s ease-in;
+  color:var(--black);
   filter:drop-shadow(5px 5px 5px rgba(255,255,255,.25));
   border-bottom:rgba(255, 255, 255, .5) 1px solid;
+
+}
+
+@keyframes textColorTitle {
+  from{
+    color:var(--textmenu);
+  }
+  to{
+    color:var(--black)
+  }
+}
+
+@keyframes bgDestaque {
+  from {
+    background-color:var(--textmenu)
+  } to {
+    background-color: var(--black);
+  }
 }
 
 .filme-principal .botao {
@@ -287,9 +345,15 @@ header nav a:first-child:hover {
   color:lightgrey;
 }
 
-.carrosel-filmes {
+.carrosel {
   width:100%;
   margin-top:5vh;
+  animation:  7.5s linear;
+
+}
+
+.hide {
+  display:none;
 }
 
 .box-filme {
@@ -406,3 +470,26 @@ box-shadow: 0px 10px 5px 0px rgba(255,255,255,1);
   margin:5px;
 }
 
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}

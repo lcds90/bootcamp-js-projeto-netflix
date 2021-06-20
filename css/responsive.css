@@ -52,6 +52,14 @@
 }
 
 @media screen and (max-width: 500px) {
+
+    .destaque {
+      margin-left:0px;
+      left:30vw;
+      top:0vh;
+      padding:15px;
+    }
+
     .box-filme {
       height: 80vh;
       width: 50%;
